@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.airbnb.lottie.compose.*
+import com.onachojr.project.R
 
 val pagePadding = 16.dp
 val primaryColor = Color(0xFF6200EE)
@@ -32,7 +33,7 @@ fun OnboardingScreen(modifier: Modifier = Modifier) {
     ) {
 
         LottieAnimationWidget(
-            lottiePath = R.raw.tech_support,
+            lottiePath = R.raw.firstp,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(250.dp)

@@ -37,12 +37,13 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.onachojr.project.R
 import com.onachojr.project.ui.screens.onboarding.LottieAnimationWidget
 
 @Composable
 fun LoginScreen(modifier: Modifier) {
-
+    fun LoginScreen(navController: NavHostController, modifier: Modifier) {
     var emailInput by remember { mutableStateOf(TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(TextFieldValue("")) }
     var isVisible by remember { mutableStateOf(false) }
@@ -119,7 +120,7 @@ fun LoginScreen(modifier: Modifier) {
             shape = RoundedCornerShape(24.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             )
-            modifier = Modifier.fillMaxWidth()
+        val modifier = Modifier.fillMaxWidth()
 
 
         Spacer(modifier = Modifier.height(24.dp))
