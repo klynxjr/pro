@@ -15,15 +15,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.*
 import com.onachojr.project.R
+import com.onachojr.project.ui.navigation.ROUTES
 
 val pagePadding = 16.dp
 val primaryColor = Color(0xFF6200EE)
 val secondaryColor = Color.Gray
 
 @Composable
-fun OnboardingScreen(modifier: Modifier = Modifier) {
+fun OnboardingScreen(navController: NavHostController, modifier: Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -66,7 +68,7 @@ fun OnboardingScreen(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = {},
+            onClick = {navController.navigate(ROUTES.login.name)},
             colors = ButtonDefaults.buttonColors(
                 containerColor = primaryColor,
                 contentColor = Color.White

@@ -1,4 +1,4 @@
-package com.onachojr.project.ui.screens.authentication.registration
+package com.onachojr.project.ui.screens.authentication.SignUp
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,7 +22,7 @@ import com.onachojr.project.R
 
 
 @Composable
-fun RegistrationScreen(modifier: Modifier){
+fun SignUpScreen(modifier: Modifier){
 //    inputs
     var FirstName by remember { mutableStateOf(TextFieldValue(""))}
     var SecondName by remember { mutableStateOf(TextFieldValue(""))}

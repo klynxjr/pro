@@ -35,16 +35,18 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.onachojr.project.R
+import com.onachojr.project.ui.navigation.ROUTES
 
 
 @Composable
-fun ForgotPasswordScreen(modifier: Modifier){
+fun ForgotPasswordScreen(navController: NavHostController, modifier: Modifier){
     var emailInput by remember { mutableStateOf(TextFieldValue("")) }
 
 //    structure:
@@ -101,7 +103,7 @@ fun ForgotPasswordScreen(modifier: Modifier){
 //        text buttons => back to login , no account?
         Row {
             TextButton(
-                onClick = {}
+                onClick = {navController.navigate(ROUTES.login.name)}
             ) {
                 Text(
                     text="back to login",

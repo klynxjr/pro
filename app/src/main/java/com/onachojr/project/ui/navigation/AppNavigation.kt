@@ -20,7 +20,6 @@ fun AppNavigation() {
             composable(ROUTES.login.name) { loginScreen(navController, modifier) }
             composable(ROUTES.forgotpassword.name) { forgotpasswordScreen(navController, modifier) }
             composable(ROUTES.signUp.name) { signUpScreen(navController, modifier) }
-            composable(ROUTES.registration.name) { registrationScreen(navController, modifier) }
 
 
         }

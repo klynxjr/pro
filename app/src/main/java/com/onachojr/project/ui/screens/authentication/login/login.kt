@@ -20,6 +20,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -39,10 +40,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.onachojr.project.R
+import com.onachojr.project.ui.navigation.ROUTES
 import com.onachojr.project.ui.screens.onboarding.LottieAnimationWidget
 
 @Composable
-fun LoginScreen(modifier: Modifier) {
     fun LoginScreen(navController: NavHostController, modifier: Modifier) {
     var emailInput by remember { mutableStateOf(TextFieldValue("")) }
     var passwordInput by remember { mutableStateOf(TextFieldValue("")) }
@@ -119,7 +120,7 @@ fun LoginScreen(modifier: Modifier) {
             maxLines = 1,
             shape = RoundedCornerShape(24.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            )
+        )
         val modifier = Modifier.fillMaxWidth()
 
 
@@ -135,15 +136,17 @@ fun LoginScreen(modifier: Modifier) {
 
         // Row
         Row {
-            Text(
-                text = "Forgot Password",
-                fontSize = 12.sp
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                text = "No account?",
-                fontSize = 12.sp
-            )
+            TextButton(onClick = {navController.navigate(ROUTES.forgotpassword.name) }) {
+                Text(
+                    text = "Forgot Password",
+                    fontSize = 12.sp
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "No account?Sign Up",
+                    fontSize = 12.sp
+                )
+            }
         }
     }
 }
